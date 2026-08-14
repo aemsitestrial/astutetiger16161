@@ -243,6 +243,11 @@ async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
 
+  // load template-specific styles, if any, without affecting other templates
+  if (document.body.classList.contains('hero-accordion')) {
+    loadCSS(`${window.hlx.codeBasePath}/styles/hero-accordion.css`);
+  }
+
   await runExperimentation(doc, experimentationConfig);
 
   await initializeDropins();

@@ -1,0 +1,27 @@
+{
+  "definitions": [
+    {
+      "title": "Section (Accordion)",
+      "id": "section-accordion",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/section/v1/section",
+            "template": {
+              "model": "section",
+              "filter": "section-accordion"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "filters": [
+    {
+      "id": "section-accordion",
+      "components": [
+        "accordion"
+      ]
+    }
+  ]
+}

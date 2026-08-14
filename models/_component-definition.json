@@ -24,6 +24,9 @@
       "components": [
         {
           "...": "./_section.json#/definitions"
+        },
+        {
+          "...": "./_section-accordion.json#/definitions"
         }
       ]
     },
@@ -31,6 +34,9 @@
       "title": "Blocks",
       "id": "blocks",
       "components": [
+        {
+          "...": "../blocks/accordion/_*.json#/definitions"
+        },
         {
           "...": "../blocks/cards/_*.json#/definitions"
         },

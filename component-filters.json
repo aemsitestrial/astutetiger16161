@@ -37,6 +37,18 @@
     ]
   },
   {
+    "id": "section-accordion",
+    "components": [
+      "accordion"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"

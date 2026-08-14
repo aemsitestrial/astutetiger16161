@@ -1,0 +1,6 @@
+/* Template-specific styling, applied via body.hero-accordion (set from page metadata "template") */
+body.hero-accordion main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nav-height);
+}

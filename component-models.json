@@ -19,6 +19,33 @@
     ]
   },
   {
+    "id": "hero-accordion-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "reference",
+        "name": "image"
+      },
+      {
+        "component": "text",
+        "name": "robots",
+        "label": "Robots"
+      },
+      {
+        "component": "text",
+        "name": "template",
+        "label": "Template",
+        "valueType": "string",
+        "value": "hero-accordion",
+        "readOnly": true
+      }
+    ]
+  },
+  {
     "id": "image",
     "fields": [
       {
@@ -161,6 +188,24 @@
             "value": "columns"
           }
         ]
+      }
+    ]
+  },
+  {
+    "id": "accordion-item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
