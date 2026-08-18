@@ -1,0 +1,21 @@
+.cfcard-content {
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color, #fff);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+}
+
+.cfcard-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cfcard-path,
+.cfcard-variation {
+  margin: 0;
+}

@@ -97,7 +97,8 @@
         "reward",
         "reward-sticky",
         "sticky-cta",
-        "quiz"
+        "quiz",
+        "section-accordion"
       ]
     }
   ]

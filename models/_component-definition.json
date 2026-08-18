@@ -41,6 +41,9 @@
           "...": "../blocks/cards/_*.json#/definitions"
         },
         {
+          "...": "../blocks/cfcard/_*.json#/definitions"
+        },
+        {
           "...": "../blocks/columns/_*.json#/definitions"
         },
         {
