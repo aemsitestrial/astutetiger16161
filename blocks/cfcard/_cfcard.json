@@ -30,6 +30,22 @@
                 "validation": {
                     "rootPath": "/content/dam"
                 }
+              },
+              {
+                "component": "text",
+                "name": "cftitle",
+                "value": "",
+                "label": "Search Title",
+                "valueType": "string",
+                "description": "Searchable title for this card. Mirror the CF's title so it can be crawled by site search."
+              },
+              {
+                "component": "textarea",
+                "name": "cfdescription",
+                "value": "",
+                "label": "Search Description",
+                "valueType": "string",
+                "description": "Searchable summary for this card. Mirror the CF's description so it can be crawled by site search."
               }
             ]
         }

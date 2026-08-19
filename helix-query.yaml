@@ -35,6 +35,27 @@ indices:
         select: head > meta[name="category"]
         value: |
           attribute(el, 'content')
+  cfcard:
+    target: /cfcard-index.json
+    exclude:
+      - 'drafts/**'
+    properties:
+      title:
+        select: main .cfcard > div:nth-child(3) > div
+        value: |
+          textContent(el)
+      description:
+        select: main .cfcard > div:nth-child(4) > div
+        value: |
+          textContent(el)
+      cfpath:
+        select: main .cfcard > div:nth-child(1) > div a
+        value: |
+          attribute(el, 'href')
+      variation:
+        select: main .cfcard > div:nth-child(2) > div
+        value: |
+          textContent(el)
   enrichment:
     target: /enrichment/enrichment.json
     include:
