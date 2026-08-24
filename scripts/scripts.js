@@ -19,6 +19,7 @@ import {
 import { trackHistory } from './commerce.js';
 import initializeDropins from './initializers/index.js';
 import { initializeConfig, getRootPath, getListOfRootPaths } from './configs.js';
+import { alloyLoadedPromise } from './alloy.js';
 
 import {
   runExperimentation,
@@ -321,6 +322,9 @@ async function loadEager(doc) {
 
     // Template Decorations
     await applyTemplates(doc);
+
+    // wait for alloy.js to finish loading/configuring before showing LCP content
+    await alloyLoadedPromise;
 
     // Load LCP blocks
     await loadSection(main.querySelector('.section'), waitForFirstImage);
