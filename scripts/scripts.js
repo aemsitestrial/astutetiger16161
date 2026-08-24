@@ -19,7 +19,7 @@ import {
 import { trackHistory } from './commerce.js';
 import initializeDropins from './initializers/index.js';
 import { initializeConfig, getRootPath, getListOfRootPaths } from './configs.js';
-import { alloyLoadedPromise } from './alloy.js';
+import alloyLoadedPromise from './alloy.js';
 
 import {
   runExperimentation,

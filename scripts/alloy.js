@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { loadScript, getMetadata } from './aem.js';
 
 // TODO: set the Adobe Experience Platform Web SDK (alloy.js) version to load from Adobe's CDN
@@ -101,7 +102,7 @@ async function getAndApplyRenderDecisions() {
 }
 
 // Kicks off alloy.js loading/configuration as soon as this module is imported
-export const alloyLoadedPromise = initWebSDK(ALLOY_SRC, {
+const alloyLoadedPromise = initWebSDK(ALLOY_SRC, {
   datastreamId: DATASTREAM_ID,
   orgId: ORG_ID,
 });
@@ -110,3 +111,5 @@ export const alloyLoadedPromise = initWebSDK(ALLOY_SRC, {
 if (getMetadata('target')) {
   alloyLoadedPromise.then(() => getAndApplyRenderDecisions());
 }
+
+export default alloyLoadedPromise;
