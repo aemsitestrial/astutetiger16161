@@ -39,6 +39,7 @@ export function generateTeaserDOM(props, classes) {
 }
         <div class='title'>${title.innerHTML}</div>
         <div class='long-description'>${longDescr.innerHTML}</div>
+        <div class='short-description'>${hasShortDescr ? shortDescr.innerHTML : ''}</div>
         <div class='cta'>${decorateButtons(firstCta, secondCta)}</div>
       </div>
       </div>
@@ -57,10 +58,32 @@ export function generateTeaserDOM(props, classes) {
   return teaserDOM;
 }
 
+/**
+ * Applies an Adobe Target personalization payload (as received via the
+ * `target:content` CustomEvent) onto a decorated teaser: `name` maps to the
+ * teaser's heading, `description` maps to the teaser's short description.
+ * @param {HTMLElement} root the decorated teaser DOM (block or fragment)
+ * @param {Object} content the personalized JSON content-item payload
+ */
+export function applyTargetPersonalization(root, content = {}) {
+  const { name, description } = content;
+  if (name) {
+    const heading = root.querySelector('.title h1, .title h2, .title h3, .title h4, .title h5, .title h6')
+      || root.querySelector('.title');
+    if (heading) heading.textContent = name;
+  }
+  if (description) {
+    const shortDescription = root.querySelector('.short-description');
+    if (shortDescription) shortDescription.textContent = description;
+  }
+}
+
 export default function decorate(block) {
   // get the first and only cell from each row
   const props = [...block.children].map((row) => row.firstElementChild);
   const teaserDOM = generateTeaserDOM(props, block.classList);
   block.textContent = '';
   block.append(teaserDOM);
+  // pick up Adobe Target JSON personalization (name -> heading, description -> short description)
+  block.addEventListener('target:content', (e) => applyTargetPersonalization(block, e.detail));
 }

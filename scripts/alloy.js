@@ -71,6 +71,25 @@ async function getElementForProposition(proposition) {
   return document.querySelector(selector);
 }
 
+const JSON_CONTENT_ITEM_SCHEMA = 'https://ns.adobe.com/personalization/json-content-item';
+
+/**
+ * Applies Target JSON content-item personalization by dispatching a `target:content`
+ * CustomEvent (with the personalized JSON payload as detail) on the matching element,
+ * so blocks can opt in to rendering their own personalized content.
+ */
+async function applyJsonContentPropositions(propositions) {
+  propositions.forEach((p) => {
+    p.items.forEach(async (item) => {
+      if (item.schema !== JSON_CONTENT_ITEM_SCHEMA) return;
+      const el = await getElementForProposition(item);
+      if (el) {
+        el.dispatchEvent(new CustomEvent('target:content', { detail: item.data.content }));
+      }
+    });
+  });
+}
+
 /**
  * Requests Target decisions and applies them once the target elements are decorated.
  */
@@ -81,6 +100,7 @@ async function getAndApplyRenderDecisions() {
   const { propositions } = response;
   onDecoratedElement(async () => {
     await window.alloy('applyPropositions', { propositions });
+    await applyJsonContentPropositions(propositions);
     // keep track of propositions that were applied
     propositions.forEach((p) => {
       p.items = p.items.filter((i) => i.schema !== 'https://ns.adobe.com/personalization/dom-action' || !getElementForProposition(i));
