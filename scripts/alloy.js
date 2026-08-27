@@ -8,7 +8,7 @@ const ALLOY_SRC = `https://cdn1.adoberesources.net/alloy/${ALLOY_VERSION}/alloy.
 // TODO: set the IMS Organization ID
 const ORG_ID = '0CEB60F754C7E06B0A4C98A2@AdobeOrg';
 // TODO: set the Edge configuration / datastream ID (formerly edgeConfigId)
-const DATASTREAM_ID = 'd899f130-bab1-43e9-9646-56d2d336d665';
+const DATASTREAM_ID = 'd7e718aa-3cf8-429f-43e9-bc60-9921cdbed6cc';
 
 /**
  * Loads and configures the Adobe Experience Platform Web SDK (alloy.js) from Adobe's CDN.
