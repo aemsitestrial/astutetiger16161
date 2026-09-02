@@ -125,6 +125,8 @@ async function getAndApplyRenderDecisions() {
 const alloyLoadedPromise = initWebSDK(ALLOY_SRC, {
   datastreamId: DATASTREAM_ID,
   orgId: ORG_ID,
+  // TODO: hook up to a real consent management system; defaulting to opted-in for now
+  defaultConsent: 'in',
 });
 
 // Gate Target rendering behind page metadata so the overhead only applies to targeted pages
