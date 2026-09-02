@@ -96,7 +96,7 @@ async function applyJsonContentPropositions(propositions) {
 async function getAndApplyRenderDecisions() {
   // Get the decisions, but don't render them automatically
   // so we can hook up into the AEM EDS page load sequence
-  const response = await window.alloy('sendEvent', { renderDecisions: true });
+  const response = await window.alloy('sendEvent', { renderDecisions: false });
   const { propositions } = response;
   onDecoratedElement(async () => {
     await window.alloy('applyPropositions', { propositions });
@@ -124,9 +124,7 @@ async function getAndApplyRenderDecisions() {
 // Kicks off alloy.js loading/configuration as soon as this module is imported
 const alloyLoadedPromise = initWebSDK(ALLOY_SRC, {
   datastreamId: DATASTREAM_ID,
-  orgId: ORG_ID,
-  // TODO: hook up to a real consent management system; defaulting to opted-in for now
-  defaultConsent: 'in',
+  orgId: ORG_ID
 });
 
 // Gate Target rendering behind page metadata so the overhead only applies to targeted pages
