@@ -3,6 +3,9 @@
     "...": "./_page.json#/models"
   },
   {
+    "...": "./_templates.json#/models"
+  },
+  {
     "...": "./_hero-accordion.json#/models"
   },
   {
