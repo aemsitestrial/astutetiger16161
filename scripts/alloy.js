@@ -124,7 +124,7 @@ async function getAndApplyRenderDecisions() {
 // Kicks off alloy.js loading/configuration as soon as this module is imported
 const alloyLoadedPromise = initWebSDK(ALLOY_SRC, {
   datastreamId: DATASTREAM_ID,
-  orgId: ORG_ID
+  orgId: ORG_ID,
 });
 
 // Gate Target rendering behind page metadata so the overhead only applies to targeted pages
