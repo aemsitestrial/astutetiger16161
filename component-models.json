@@ -568,6 +568,46 @@
     ]
   },
   {
+    "id": "card-action",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "richtext",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "container",
+        "name": "action",
+        "label": "Actions",
+        "collapsible": true,
+        "multi": true,
+        "fields": [
+          {
+            "component": "text",
+            "name": "linkText",
+            "label": "Link Text",
+            "valueType": "string"
+          },
+          {
+            "component": "aem-content",
+            "name": "link",
+            "label": "Link",
+            "valueType": "string"
+          }
+        ]
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {

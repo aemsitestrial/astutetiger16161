@@ -16,6 +16,7 @@
       "hero",
       "article",
       "cards",
+      "cards-action",
       "cfcard",
       "columns",
       "teaser",
@@ -49,6 +50,12 @@
     "id": "accordion",
     "components": [
       "accordion-item"
+    ]
+  },
+  {
+    "id": "cards-action",
+    "components": [
+      "card-action"
     ]
   },
   {

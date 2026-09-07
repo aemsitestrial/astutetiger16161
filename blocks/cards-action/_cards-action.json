@@ -1,0 +1,84 @@
+{
+  "definitions": [
+    {
+      "title": "Cards Action",
+      "id": "cards-action",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Cards Action",
+              "filter": "cards-action"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Card Action",
+      "id": "card-action",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Card Action",
+              "model": "card-action"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "card-action",
+      "fields": [
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "image",
+          "label": "Image",
+          "multi": false
+        },
+        {
+          "component": "richtext",
+          "name": "text",
+          "value": "",
+          "label": "Text",
+          "valueType": "string"
+        },
+        {
+          "component": "container",
+          "name": "action",
+          "label": "Actions",
+          "collapsible": true,
+          "multi": true,
+          "fields": [
+            {
+              "component": "text",
+              "name": "linkText",
+              "label": "Link Text",
+              "valueType": "string"
+            },
+            {
+              "component": "aem-content",
+              "name": "link",
+              "label": "Link",
+              "valueType": "string"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "cards-action",
+      "components": [
+        "card-action"
+      ]
+    }
+  ]
+}
